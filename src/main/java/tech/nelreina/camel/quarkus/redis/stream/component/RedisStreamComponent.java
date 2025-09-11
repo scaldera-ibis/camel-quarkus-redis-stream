@@ -33,8 +33,8 @@ public class RedisStreamComponent extends DefaultComponent {
     private boolean autoAck = true;
     private int pollingInterval = 100;
     private String globalHeaderFilters = "";
-    private String encryptionKey = "vL9eA3rTqX5mZ8pKc2WbN7gYd4JhR6uQ";
-    private String encryptionIv = "aB3dE6gH9jK1LmNp";
+    private String encryptionKey = "";
+    private String encryptionIv = "";
     private boolean encryptionEnabled = true;
 
 
