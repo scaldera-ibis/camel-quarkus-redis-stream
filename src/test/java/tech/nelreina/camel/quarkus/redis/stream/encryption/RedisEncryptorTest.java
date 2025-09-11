@@ -30,6 +30,7 @@ public class RedisEncryptorTest {
 
     @Test
     public void testInvalidInput() {
+        //fail
         Assertions.assertThrows(IllegalArgumentException.class, () -> new RedisEncryptor("            ", "           ", true));
         Assertions.assertThrows(IllegalArgumentException.class, () -> new RedisEncryptor("", "", true));
         Assertions.assertThrows(IllegalArgumentException.class, () -> new RedisEncryptor("", "aB3dE6gH9jK1LmNp", true));
@@ -37,7 +38,8 @@ public class RedisEncryptorTest {
         Assertions.assertThrows(IllegalArgumentException.class, () -> new RedisEncryptor("vL9eA3rTqX5mZ8pKc2WbN7gYd4JhR6uQ", "aB3dE6gH9jK1LmN", true));
         Assertions.assertThrows(IllegalArgumentException.class, () -> new RedisEncryptor("vL9eA3rTqX5mZ8pKc2WbN7gYd4JhR6u", "aB3dE6gH9jK1LmNp", true));
 
-        //sucess
-        new RedisEncryptor(encryptionKey, encryptionIv, true);
+        //success
+        Assertions.assertDoesNotThrow(() -> new RedisEncryptor(" ", "", false));
+        Assertions.assertDoesNotThrow(() -> new RedisEncryptor(encryptionKey, encryptionIv, true));
     }
 }
